@@ -5,29 +5,39 @@
 #define PASSING_GRADE 60
 
 int main(){
-    int num_student;
+    int num_student, i;
     int count = 0;
+    
 printf("Enter the number of students: ");
 if(scanf("%d" , &num_student) > MAX_STUDENTS){
     printf("Maximum number of students exceeded");
 }
-while(count < num_student){
-    char student_name[10];
-    int student_grade;
-    
+   char student_name[num_student][10];
+    int student_grade[num_student];
+    char grade;
+for(i=0;i<num_student;i++){
+
 printf("Enter student name:");
-scanf("%s", student_name);
+scanf("%s", student_name[i]);
 
 printf("Enter student grade:");
-scanf("%d", &student_grade);
+scanf("%d", &student_grade[i]);
 count++;
 }
 
-if(student_grade < PASSING_GRADE){
-    printf("Student has not met the course standard.");
+printf("The list of students.\n");
+printf("Student name    student_mark    grade\n");
+for(i=0;i<num_student;i++){
+    if(student_grade < PASSING_GRADE){
+    grade = 'F';
 }else{
-    printf("Student has met the course standard.");
+    grade = 'P';
 }
+    printf("%s               %d                 %c", student_name[i] ,student_grade[i], grade);
+    printf("\n");
+}
+
+
 
 
 }
