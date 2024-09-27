@@ -2,7 +2,7 @@
 CC = gcc
 
 # Define the compiler flags
-CC_FLAGS = -g -pedantic -W -Wall
+CC_FLAGS = -g -pedantic -W -Wall -ansi -Wextra
 
 # List of source files
 FILES = student_grade.c
